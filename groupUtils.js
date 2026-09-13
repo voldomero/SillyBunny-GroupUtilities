@@ -15,7 +15,13 @@ const EXTENSION_PROMPT_TYPES = {
 const EXTENSION_PROMPT_ROLES = {
   SYSTEM: 0,
 }
-const extensionFolderPath = "scripts/extensions/third-party/SillyBunny-GroupUtilities";
+// Resolve assets relative to this module instead of a hardcoded folder name.
+// The install folder is named after the repository (SB-GroupUtilities), so a
+// hardcoded "SillyBunny-GroupUtilities" path 404s. jQuery rejects that request
+// with a jqXHR that has no message or stack, and because this file's entry
+// point is a jQuery ready callback, jQuery rethrows it and SillyBunny's startup
+// aborts with an unreadable "[object Object]" error.
+const assetUrl = (path) => new URL(path, import.meta.url).href;
 const settings = {
   char_position: 0,
   position: 1,
@@ -261,14 +267,14 @@ jQuery(async () => {
   })
 
   const note_visual_insert_depth = 9
-  const group_note_element = await $.get(`${extensionFolderPath}/html/group-note.html`)
+  const group_note_element = await $.get(assetUrl("./html/group-note.html"))
   const container = $('#character_popup');
   $('#group_note_div').remove();
   if (container.children().length >= note_visual_insert_depth) {
     container.children().eq(note_visual_insert_depth-1).after(group_note_element);
   }
 
-  const settingsHtml = await $.get(`${extensionFolderPath}/html/group-utils-settings.html`);
+  const settingsHtml = await $.get(assetUrl("./html/group-utils-settings.html"));
   $("#extensions_settings2 .sbu-group-utils-settings").remove();
   $("#extensions_settings2").append(settingsHtml);
   
