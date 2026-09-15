@@ -1,5 +1,7 @@
 # SillyBunny Group Utilities
 
+> **Depreciated**. See [Group Chat Overhaul](https://github.com/voldomero/SillyBunnyGCOhttps://github.com/voldomero/SillyBunnyGCO) for latest release.
+
 SillyBunny Group Utilities is a bundled fork of four group-chat focused SillyTavern extensions, adapted to work together as one SillyBunny extension.
 
 This project exists to make group chats in [SillyBunny](https://github.com/platberlitz/SillyBunny) smoother by combining group-specific greetings, shared group context utilities, and quick `/sendas` support without requiring users to install and manage several separate extensions.
