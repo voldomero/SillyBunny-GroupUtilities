@@ -1,7 +1,7 @@
 # SillyBunny Group Utilities
 
 ### This project has been updated and moved to a new repository!
-> **Depreciated**. See [Group Chat Overhaul](https://github.com/voldomero/SillyBunnyGCOhttps://github.com/voldomero/SillyBunnyGCO) for latest release.
+> **Depreciated**. See [Group Chat Overhaul](https://github.com/voldomero/SillyBunnyGCO) for latest release.
 
 ---
 
